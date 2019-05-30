@@ -1,5 +1,5 @@
 AdminUser.create!([
-  {email: "admin@example.com",password: "password"}
+  {email: "admin@example.com", password: "password"}
 ])
 Faculty.create!([
   {name: "Открытый"}
@@ -13,7 +13,22 @@ Subject.create!([
   {name: "Предмет номер два"},
   {name: "Предмет номер три"}
 ])
-Entrant.create!([
-  {first_name: "asd", last_name: "asd", patronymic: "", passport: "234555", department_id: nil}
+Stream.create!([
+  {number: 1},
+  {number: 2}
 ])
-
+Group.create!([
+  {number: 6894, department_id: 1, stream_id: 2}
+])
+Entrant.create!([
+  {first_name: "asd", last_name: "asd", patronymic: "", passport: "234555", department_id: 1}
+])
+Exam.create!([
+  {start_date: "2019-06-02 18:00:00", subject_id: 1, stream_id: 1}
+])
+ExamList.create!([
+  {assessment: 2, entrant_id: 1, exam_id: 1}
+])
+Consultation.create!([
+  {auditorium: 5874, start_date: "2019-06-01 14:00:00", stream_id: 1, subject_id: 2}
+])

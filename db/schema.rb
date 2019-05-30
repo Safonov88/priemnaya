@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
   create_table "consultations", force: :cascade do |t|
     t.integer "auditorium", null: false
     t.datetime "start_date", null: false
+    t.bigint "stream_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subject_id", null: false
+    t.index ["stream_id"], name: "index_consultations_on_stream_id"
     t.index ["subject_id"], name: "index_consultations_on_subject_id"
   end
 
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
     t.bigint "department_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "stream_id", null: false
     t.index ["department_id"], name: "index_groups_on_department_id"
   end
 
@@ -107,8 +110,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
     t.integer "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "consultation_id", null: false
-    t.index ["consultation_id"], name: "index_streams_on_consultation_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -130,6 +131,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "consultations", "streams"
   add_foreign_key "consultations", "subjects"
   add_foreign_key "departments", "faculties"
   add_foreign_key "entrants", "departments"
@@ -138,5 +140,4 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
   add_foreign_key "exams", "streams"
   add_foreign_key "exams", "subjects"
   add_foreign_key "groups", "departments"
-  add_foreign_key "streams", "consultations"
 end

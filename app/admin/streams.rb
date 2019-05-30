@@ -1,3 +1,3 @@
 ActiveAdmin.register Stream do
-  permit_params :Number
+  permit_params :number
 end
