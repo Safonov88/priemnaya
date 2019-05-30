@@ -41,13 +41,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "consultations", force: :cascade do |t|
     t.integer "auditorium", null: false
     t.datetime "start_date", null: false
@@ -111,13 +104,11 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
   end
 
   create_table "streams", force: :cascade do |t|
-    t.integer "Number", null: false
-    t.bigint "group_id", null: false
+    t.integer "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "consultation_id", null: false
     t.index ["consultation_id"], name: "index_streams_on_consultation_id"
-    t.index ["group_id"], name: "index_streams_on_group_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -148,5 +139,4 @@ ActiveRecord::Schema.define(version: 2019_05_30_101737) do
   add_foreign_key "exams", "subjects"
   add_foreign_key "groups", "departments"
   add_foreign_key "streams", "consultations"
-  add_foreign_key "streams", "groups"
 end
