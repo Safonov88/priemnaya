@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: priemnaya_production
-  username: priemnaya
-  password: <%= ENV['PRIEMNAYA_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db_prod %
+  username: <%= Rails.application.credentials.db_prod_user %>
+  password: <%= Rails.application.credentials.db_prod_password %>
