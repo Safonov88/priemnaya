@@ -171,7 +171,7 @@ ru:
         last_name: "Фамилия"
         patronymic: "Отчество"
         passport: "Паспорт"
-        department: "Факультет"
+        department: "Кафедра"
         created_at: "Дата создания"
         updated_at: "Дата обновления"
         exam_list: "Экзаменационный лист"
@@ -187,6 +187,7 @@ ru:
         updated_at: "Дата обновления"
         subject: "Предмет"
         stream: "Поток"
+        auditorium: "Аудитория"
       faculty:
         name: "Название"
         created_at: "Дата создания"
@@ -195,7 +196,7 @@ ru:
         stream: "Поток"
         created_at: "Дата создания"
         updated_at: "Дата обновления"
-        department: "Факультет"
+        department: "Кафедра"
         name: "Название"
       stream:
         name: "Название"
