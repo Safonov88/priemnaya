@@ -140,7 +140,9 @@ ru:
       blog: "Блог"
   activerecord:
     models:
+      admin_user: "Администраторы"
       consultation: "Консультации"
+      comment: "Комментарии"
       department: "Кафедры"
       entrant: "Абитуриенты"
       exam_list: "Экзаменационные листы"
@@ -194,9 +196,9 @@ ru:
         created_at: "Дата создания"
         updated_at: "Дата обновления"
         department: "Факультет"
-        number: "Номер"
+        name: "Название"
       stream:
-        number: "Номер"
+        name: "Название"
         created_at: "Дата создания"
         updated_at: "Дата обновления"
       subject:

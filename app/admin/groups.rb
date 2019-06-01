@@ -1,5 +1,5 @@
 ActiveAdmin.register Group do
-  permit_params :department_id, :stream_id, :number
+  permit_params :department_id, :stream_id, :name
 
   index do
     id_column
