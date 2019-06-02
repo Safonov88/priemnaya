@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Количество</th>
+  </tr>
+  <% Department.eager_load(:entrants).map do |department| %>
+    <tr>
+      <td><%= link_to(department.name, admin_department_path(department)) %></td>
+      <td><%= department.entrants.count %></td>
+    </tr>
+  <% end %>
+</table>

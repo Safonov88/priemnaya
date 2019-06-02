@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Предмет</th>
+    <th>Дата</th>
+    <th>Аудитория</th>
+  </tr>
+  <% Exam.order(:start_date).map do |exam| %>
+    <tr>
+      <td><%= link_to(exam.subject.name, admin_exam_path(exam)) %></td>
+      <td><%= exam.start_date %></td>
+      <td><%= exam.auditorium %></td>
+    </tr>
+  <% end %>
+</table>

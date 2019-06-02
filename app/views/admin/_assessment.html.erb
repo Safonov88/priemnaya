@@ -1,0 +1,30 @@
+<table>
+  <tr>
+    <th>Оценка</th>
+    <th>Количество</th>
+  </tr>
+  <tr>
+    <td><%= 0 %></td>
+    <td><%= ExamList.where(assessment: 0).count %></td>
+  </tr>
+  <tr>
+    <td><%= 1 %></td>
+    <td><%= ExamList.where(assessment: 1).count %></td>
+  </tr>
+  <tr>
+    <td><%= 2 %></td>
+    <td><%= ExamList.where(assessment: 2).count %></td>
+  </tr>
+  <tr>
+    <td><%= 3 %></td>
+    <td><%= ExamList.where(assessment: 3).count %></td>
+  </tr>
+  <tr>
+    <td><%= 4 %></td>
+    <td><%= ExamList.where(assessment: 4).count %></td>
+  </tr>
+  <tr>
+    <td><%= 5 %></td>
+    <td><%= ExamList.where(assessment: 5).count %></td>
+  </tr>
+</table>
